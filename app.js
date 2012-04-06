@@ -1,12 +1,17 @@
 Ext.application({
-    name: 'Sencha',
+    name: 'App',
 
     controllers: ['Main'],
-    views: ['Main'],
+    models: ['Node'],
+    stores: ['Nodes'],
+    views: [
+        'Home',
+        'NodeList'
+    ],
 
     launch: function() {
         Ext.Viewport.add({
-            xclass: 'Sencha.view.Main'
+            xclass: 'App.view.Home'
         });
     }
 });

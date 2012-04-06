@@ -1,4 +1,4 @@
-Ext.define('Sencha.controller.Main', {
+Ext.define('App.controller.Main', {
     extend: 'Ext.app.Controller',
 
     config: {
