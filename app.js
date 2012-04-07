@@ -1,5 +1,6 @@
 Ext.application({
     name: 'App',
+    requires: ['Ext.device.*'],
 
     controllers: ['Main'],
     models: ['Node'],
