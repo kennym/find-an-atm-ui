@@ -4,7 +4,7 @@ Ext.application({
 
     controllers: ['Main'],
     models: ['Node'],
-    stores: ['Nodes'],
+    stores: ['Nodes'],          
     views: [
         'Home',
         'NodeList',
