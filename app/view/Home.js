@@ -4,34 +4,17 @@
  * The home view
  */
 Ext.define('App.view.Home', {
-    extend: 'Ext.Container',
+    extend: 'Ext.navigation.View',
     xtype: 'homeview',
     requires: [
         'App.view.NodeList',
-        'App.model.Node',
-        'App.store.Nodes'
     ],
 
     config: {
-        layout: 'card',
+
         items: [
             {
-                xtype: 'toolbar',
-                docked: 'top',
-                items: [
-                    {
-                        xtype: 'searchfield',
-                        name: 'query'
-                    },
-                    {
-                        iconCls: 'refresh',
-                        handler: function(event, btn) {
-                            Ext.StoreMgr.get('Nodes').load();
-                        }
-                    }
-                ]
-            },
-            {
+                title: 'Home view',
                 xtype: 'nodelist',
                 grouped: true
             },
@@ -41,12 +24,7 @@ Ext.define('App.view.Home', {
                 items: [
                     {
                         xtype: 'spacer',
-                        flex: 0.5
-                    },
-                    {
-                        xtype: 'button',
-                        html: 'Explore',
-                        centered: true
+                        flex: 1
                     },
                     {
                         xtype: 'button',

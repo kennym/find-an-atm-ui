@@ -6,7 +6,9 @@ Ext.application({
     stores: ['Nodes'],
     views: [
         'Home',
-        'NodeList'
+        'NodeList',
+        'NodeDetail',
+        'NodeMap'
     ],
 
     launch: function() {

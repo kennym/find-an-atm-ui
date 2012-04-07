@@ -29,7 +29,7 @@ Ext.define('App.view.NodeList', {
                         }
                         return response;
                     } catch (e) {
-                        return '';
+                        return null;
                     }
                 }
             }
