@@ -14,9 +14,25 @@ Ext.define('App.view.NodeList', {
             '<div class="node-wrapper">',
             '   <div class="node">',
             '       <h2>{name}</h2>',
-            '       <span class="distance">{distance}</span>',
+            '       <span class="distance">{[this.showHumanDistance(values.distance)]}</span>',
             '   </div>',
-            '</div>'
+            '</div>',
+            {
+                showHumanDistance: function(distance) {
+                    try {
+                        var response;
+                        distance = parseFloat(distance);
+                        if (distance < 2.0) {
+                            response = distance * 1000 + " m";
+                        } else {
+                            response = distance + " km";
+                        }
+                        return response;
+                    } catch (e) {
+                        return '';
+                    }
+                }
+            }
         ),
         store: 'Nodes'
     }

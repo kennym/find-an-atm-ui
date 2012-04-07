@@ -16,3 +16,16 @@
 @include sencha-form;
 @include sencha-msgbox;
 @include sencha-loading-spinner;
+
+.node-wrapper {
+    .node {
+        h2 {
+            float: left;
+            font-weight: bold;
+        }
+        span.distance {
+            float: right;
+            color: #0A6AAC;
+        }
+    }
+}
