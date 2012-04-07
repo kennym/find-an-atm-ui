@@ -27,8 +27,9 @@ Ext.define('App.view.Home', {
                         flex: 1
                     },
                     {
-                        xtype: 'button',
-                        html: 'Add'
+                        iconCls: 'add1',
+                        iconMask: true,
+                        action: 'addNode'
                     },
 
                 ]

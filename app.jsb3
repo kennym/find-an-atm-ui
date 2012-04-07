@@ -1,6 +1,6 @@
 {
-    "projectName": "Sencha Touch Boilerplate",
-    "licenseText": "Distributed under the same license as Sencha Touch",
+    "projectName": "Find-an-ATM",
+    "licenseText": "GPLv3",
     "builds": [
         {
             "name": "All Classes",

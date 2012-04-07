@@ -5,14 +5,20 @@ Ext.define('App.controller.Main', {
         refs: {
             home:           'homeview',
             nodelist:       'nodelist',
-            nodeDetail:     'nodedetail'
+            nodeDetail:     'nodedetail',
+            addNodeForm:    'addnodeform',
+            addNodeButton:  'button[action=addNode]'
         },
         control: {
             nodelist: {
                 itemtap: 'showNodeDetail'
+            },
+            addNodeButton: {
+                tap: 'showAddNodeForm'
             }
         }
     },
+
     showNodeDetail: function(list, index, node, record) {
         var nodeDetail = this.getNodeDetail();
 
@@ -23,6 +29,13 @@ Ext.define('App.controller.Main', {
         this.nodeDetail.setRecord(record);
 
         this.getHome().push(this.nodeDetail);
-        // this.getHome().setActiveItem(this.nodeDetail);
+    },
+
+    showAddNodeForm: function(button) {
+        if (!this.getAddNodeForm()) {
+            this.addNodeForm = Ext.create('App.view.AddNodeForm');
+        }
+
+        this.getHome().setActiveItem(this.addNodeForm);
     }
 });
