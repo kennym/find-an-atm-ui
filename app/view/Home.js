@@ -23,16 +23,17 @@ Ext.define('App.view.Home', {
                         xtype: 'searchfield',
                         name: 'query'
                     },
-                    // {
-                    //     iconCls: 'refresh',
-                    //     handler: function(event, btn) {
-                    //         Ext.StoreMgr.get('Nodes').load();
-                    //     }
-                    // }
+                    {
+                        iconCls: 'refresh',
+                        handler: function(event, btn) {
+                            Ext.StoreMgr.get('Nodes').load();
+                        }
+                    }
                 ]
             },
             {
-                xtype: 'nodelist'
+                xtype: 'nodelist',
+                grouped: true
             },
             {
                 xtype: 'toolbar',
