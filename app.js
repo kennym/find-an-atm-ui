@@ -4,7 +4,7 @@ Ext.application({
 
     controllers: ['Main'],
     models: ['Node'],
-    stores: ['Nodes'],          
+    stores: ['Nodes'],
     views: [
         'Home',
         'NodeList',
@@ -16,5 +16,16 @@ Ext.application({
         Ext.Viewport.add({
             xclass: 'App.view.Home'
         });
+
+        var geo = new Ext.util.Geolocation({
+                autoUpdate: true,
+                allowHighAccuracy: true,
+                listeners: {
+                    locationupdate: function(geo) {
+                        lat = geo.getLatitude();
+                        lon = geo.getLongitude();
+                    }
+                }
+            });
     }
 });

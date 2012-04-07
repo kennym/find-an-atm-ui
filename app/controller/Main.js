@@ -20,14 +20,10 @@ Ext.define('App.controller.Main', {
     },
 
     showNodeDetail: function(list, index, node, record) {
-        var nodeDetail = this.getNodeDetail();
-
-        if (!nodeDetail) {
+        if (!this.getNodeDetail()) {
             this.nodeDetail = Ext.create('App.view.NodeDetail');
         }
-
         this.nodeDetail.setRecord(record);
-
         this.getHome().push(this.nodeDetail);
     },
 

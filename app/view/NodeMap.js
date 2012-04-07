@@ -12,6 +12,7 @@ Ext.define('App.view.NodeMap', {
         useCurrentLocation: true,
         listeners: {
             maprender: function(comp, map) {
+                console.log(this);
                 new google.maps.Marker({
                     position: new google.maps.LatLng(this._geo.getLatitude(), this._geo.getLongitude()),
                     map: map

@@ -5,10 +5,12 @@
  * Form for adding a new node
  */
 Ext.define('App.view.AddNodeForm', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.form.Panel',
     xtype: 'addnodeform',
+    url: 'http://find-an-atm.kennymeyer.net/nodes',
 
     config: {
+        url: 'http://find-an-atm.kennymeyer.net/nodes',
         title: "Add ATM",
         items: [
             {
@@ -41,14 +43,30 @@ Ext.define('App.view.AddNodeForm', {
                         xtype: 'textfield',
                         name: 'latitude',
                         label: 'Latitude',
-                        disabled: true
+                        disabled: true,
+                        value: this.lat
                     },
                     {
                         xtype: 'textfield',
                         name: 'longitude',
                         label: 'Longitude',
-                        disabled: true
+                        disabled: true,
+                        value: this.lon
                     },
+                ]
+            },
+            {
+                xtype: 'toolbar',
+                docked: 'bottom',
+                items: [
+                    { xtype: 'spacer' },
+                    {
+                        text: 'Save',
+                        ui: 'confirm',
+                        handler: function() {
+                            this.up('addnodeform').submit();
+                        }
+                    }
                 ]
             }
         ]
