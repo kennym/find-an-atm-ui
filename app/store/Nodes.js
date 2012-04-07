@@ -22,14 +22,18 @@ Ext.define('App.store.Nodes', {
             reader: {
                 type: 'json',
                 rootProperty: ""
+            },
+            afterRequest: function(request, success) {
+                console.log(request);
+                console.log(sucesss);
             }
         },
         listeners: {
             load: function(records, successful, operation) {
                 records.each(function(record) {
                     record.calculateDistance();
-                })
-            },
+                });
+            }
         }
     }
 });

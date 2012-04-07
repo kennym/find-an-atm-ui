@@ -4,7 +4,7 @@
  * The home view
  */
 Ext.define('App.view.Home', {
-    extend: 'Ext.Panel',
+    extend: 'Ext.Container',
     xtype: 'homeview',
     requires: [
         'App.view.NodeList',
@@ -13,18 +13,26 @@ Ext.define('App.view.Home', {
     ],
 
     config: {
+        layout: 'card',
         items: [
             {
                 xtype: 'toolbar',
+                docked: 'top',
                 items: [
                     {
                         xtype: 'searchfield',
                         name: 'query'
-                    }
+                    },
+                    // {
+                    //     iconCls: 'refresh',
+                    //     handler: function(event, btn) {
+                    //         Ext.StoreMgr.get('Nodes').load();
+                    //     }
+                    // }
                 ]
             },
             {
-                xtype: 'nodelist',
+                xtype: 'nodelist'
             },
             {
                 xtype: 'toolbar',
