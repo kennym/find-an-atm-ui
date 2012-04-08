@@ -22,13 +22,13 @@ Ext.define('App.view.AddNodeForm', {
                         ui: 'back',
                         handler: function(button) {
                             Ext.Viewport.getLayout().setAnimation({
-                                    type: 'slide',
-                                    direction: 'down'
+                                type: 'slide',
+                                direction: 'down'
                             });
                             Ext.Viewport.setActiveItem(Ext.ComponentQuery.query('homeview')[0]);
                             Ext.Viewport.getLayout().setAnimation({
-                                    type: 'slide',
-                                    direction: 'right'
+                                type: 'slide',
+                                direction: 'right'
                             });
                         }
                     }
@@ -63,11 +63,7 @@ Ext.define('App.view.AddNodeForm', {
                         label: 'Longitude',
                         value: this.lon,
                         hidden: true
-                    },
-                    {
-                        xtype: 'map',
-                        useCurrentLocation: true
-                    },
+                    }
                 ]
             },
             {
@@ -79,7 +75,14 @@ Ext.define('App.view.AddNodeForm', {
                         text: 'Save',
                         ui: 'confirm',
                         handler: function() {
-                            this.up('addnodeform').submit();
+                            this.up('addnodeform').submit({
+                                success: function(result, e, opts) {
+                                    console.log(result);
+                                },
+                                error: function(result, e, opts) {
+                                    console.log(result);
+                                }
+                            });
                         }
                     }
                 ]
