@@ -9,7 +9,6 @@ Ext.define('App.store.Nodes', {
     id: 'nodelist',
     requires: [
         "App.model.Node",
-        "Ext.data.proxy.JsonP"
     ],
 
     config: {
@@ -36,7 +35,7 @@ Ext.define('App.store.Nodes', {
             sortProperty: 'distance',
         },
         proxy: {
-            type: 'jsonp',
+            type: 'json',
             url: 'http://find-an-atm.kennymeyer.net/nodes.json',
             reader: {
                 type: 'json',
