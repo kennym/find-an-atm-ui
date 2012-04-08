@@ -24,7 +24,11 @@ Ext.define('App.controller.Main', {
             this.nodeDetail = Ext.create('App.view.NodeDetail');
         }
         this.nodeDetail.setRecord(record);
-        this.getHome().push(this.nodeDetail);
+        Ext.Viewport.getLayout().setAnimation({
+                type: 'slide',
+                direction: 'left'
+        });
+        Ext.Viewport.setActiveItem(this.nodeDetail, this.getHome());
     },
 
     showAddNodeForm: function(button) {
@@ -32,6 +36,10 @@ Ext.define('App.controller.Main', {
             this.addNodeForm = Ext.create('App.view.AddNodeForm');
         }
 
-        this.getHome().setActiveItem(this.addNodeForm);
+        Ext.Viewport.getLayout().setAnimation({
+                type: 'slide',
+                direction: 'up'
+        });
+        Ext.Viewport.setActiveItem(this.addNodeForm);
     }
 });

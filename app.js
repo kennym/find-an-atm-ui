@@ -9,7 +9,8 @@ Ext.application({
         'Home',
         'NodeList',
         'NodeDetail',
-        'NodeMap'
+        'NodeMap',
+        'AddNodeForm'
     ],
 
     launch: function() {

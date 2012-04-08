@@ -15,6 +15,28 @@ Ext.define('App.view.NodeDetail', {
         title: 'Detail',
         items: [
             {
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Detail',
+                items: [
+                    {
+                        ui: 'back',
+                        html: 'Back',
+                        handler: function(button) {
+                            Ext.Viewport.getLayout().setAnimation({
+                                    type: 'slide',
+                                    direction: 'right'
+                            });
+                            Ext.Viewport.setActiveItem(Ext.ComponentQuery.query('homeview')[0]);
+                            Ext.Viewport.getLayout().setAnimation({
+                                    type: 'slide',
+                                    direction: 'left'
+                            });
+                        }
+                    }
+                ]
+            },
+            {
                 xtype: 'nodemap'
             }
         ],

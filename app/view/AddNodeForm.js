@@ -7,16 +7,37 @@
 Ext.define('App.view.AddNodeForm', {
     extend: 'Ext.form.Panel',
     xtype: 'addnodeform',
-    url: 'http://find-an-atm.kennymeyer.net/nodes',
 
     config: {
         url: 'http://find-an-atm.kennymeyer.net/nodes',
-        title: "Add ATM",
         items: [
+            {
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Add ATM',
+                items: [
+                    {
+                        xtype: 'button',
+                        html: 'Back',
+                        ui: 'back',
+                        handler: function(button) {
+                            Ext.Viewport.getLayout().setAnimation({
+                                    type: 'slide',
+                                    direction: 'down'
+                            });
+                            Ext.Viewport.setActiveItem(Ext.ComponentQuery.query('homeview')[0]);
+                            Ext.Viewport.getLayout().setAnimation({
+                                    type: 'slide',
+                                    direction: 'right'
+                            });
+                        }
+                    }
+                ]
+            },
             {
                 xtype: 'fieldset',
                 title: 'Basic information',
-                instructions: 'Please enter the information above.',
+                instructions: 'Name of the bank. E.g.: Citibank',
                 defaults: {
                     labelAlign: 'left',
                     labelWidth: '40%'
@@ -42,20 +63,13 @@ Ext.define('App.view.AddNodeForm', {
                         label: 'Longitude',
                         value: this.lon,
                         hidden: true
-                    }
+                    },
+                    {
+                        xtype: 'map',
+                        useCurrentLocation: true
+                    },
                 ]
             },
-            // {
-            //     xtype: 'fieldset',
-            //     title: 'Location details',
-            //     defaults: {
-            //         labelAlign: 'left',
-            //         labelWidth: '40%'
-            //     },
-            //     items: [
-            //
-            //     ]
-            // },
             {
                 xtype: 'toolbar',
                 docked: 'bottom',

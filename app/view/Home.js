@@ -4,17 +4,21 @@
  * The home view
  */
 Ext.define('App.view.Home', {
-    extend: 'Ext.navigation.View',
+    extend: 'Ext.Container',
     xtype: 'homeview',
     requires: [
         'App.view.NodeList',
     ],
 
     config: {
-
+        layout: 'card',
         items: [
             {
-                title: 'Home view',
+                xtype: 'toolbar',
+                docked: 'top',
+                title: 'Bla'
+            },
+            {
                 xtype: 'nodelist',
                 grouped: true
             },
