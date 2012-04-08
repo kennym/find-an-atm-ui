@@ -18,12 +18,12 @@ Ext.define('App.view.AddNodeForm', {
                 title: 'Basic information',
                 instructions: 'Please enter the information above.',
                 defaults: {
-                    require: true,
                     labelAlign: 'left',
                     labelWidth: '40%'
                 },
                 items: [
                     {
+                        required: true,
                         xtype: 'textfield',
                         name: 'name',
                         label: 'Name',
@@ -33,15 +33,15 @@ Ext.define('App.view.AddNodeForm', {
                         xtype: 'textfield',
                         name: 'latitude',
                         label: 'Latitude',
-                        disabled: true,
-                        value: this.lat
+                        value: this.lat,
+                        hidden: true
                     },
                     {
                         xtype: 'textfield',
                         name: 'longitude',
                         label: 'Longitude',
-                        disabled: true,
-                        value: this.lon
+                        value: this.lon,
+                        hidden: true
                     }
                 ]
             },
