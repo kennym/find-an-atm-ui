@@ -28,17 +28,7 @@ Ext.define('App.view.AddNodeForm', {
                         name: 'name',
                         label: 'Name',
                         autoCapitalize: true
-                    }
-                ]
-            },
-            {
-                xtype: 'fieldset',
-                title: 'Location details',
-                defaults: {
-                    labelAlign: 'left',
-                    labelWidth: '40%'
-                },
-                items: [
+                    },
                     {
                         xtype: 'textfield',
                         name: 'latitude',
@@ -52,9 +42,20 @@ Ext.define('App.view.AddNodeForm', {
                         label: 'Longitude',
                         disabled: true,
                         value: this.lon
-                    },
+                    }
                 ]
             },
+            // {
+            //     xtype: 'fieldset',
+            //     title: 'Location details',
+            //     defaults: {
+            //         labelAlign: 'left',
+            //         labelWidth: '40%'
+            //     },
+            //     items: [
+            //
+            //     ]
+            // },
             {
                 xtype: 'toolbar',
                 docked: 'bottom',
