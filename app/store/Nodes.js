@@ -35,7 +35,6 @@ Ext.define('App.store.Nodes', {
             sortProperty: 'distance',
         },
         proxy: {
-            type: 'json',
             url: 'http://find-an-atm.kennymeyer.net/nodes.json',
             reader: {
                 type: 'json',

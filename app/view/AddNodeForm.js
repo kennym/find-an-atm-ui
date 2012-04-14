@@ -54,14 +54,14 @@ Ext.define('App.view.AddNodeForm', {
                         xtype: 'textfield',
                         name: 'latitude',
                         label: 'Latitude',
-                        value: this.lat,
+                        value: lat,
                         hidden: true
                     },
                     {
                         xtype: 'textfield',
                         name: 'longitude',
                         label: 'Longitude',
-                        value: this.lon,
+                        value: console.log(this),
                         hidden: true
                     }
                 ]
