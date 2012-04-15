@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" href="http://code.leafletjs.com/leaflet-0.3.1/leaflet.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js">
+	<script src="http://code.leafletjs.com/leaflet-0.3.1/leaflet.js"></script>
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="page1">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <div data-theme="a" data-role="header">
+                    <h3>
+                        ATM List
+                    </h3>
+                </div>
+                <div data-role="fieldcontain">
+                    <fieldset data-role="controlgroup" data-mini="true">
+                        <label for="textinput3">
+                        </label>
+                        <input id="textinput3" placeholder="Search by name" value="" type="search" />
+                    </fieldset>
+                </div>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-divider-theme="b" data-inset="false">
+                    <li data-role="list-divider" role="heading">
+                        Short walk
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Banco Iberia
+                        </a>
+                    </li>
+                    <li data-role="list-divider" role="heading">
+                        Short car drive
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Banco Itau
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Banco Continental
+                        </a>
+                    </li>
+                    <li data-role="list-divider" role="heading">
+                        Quite far away
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page2" data-transition="slide">
+                            Citibank
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="home" class="ui-btn-active">
+                                List
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page4" data-theme="" data-icon="grid">
+                                Map
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page4" data-theme="" data-icon="plus">
+                                Add ATM
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page2">
+            <div data-theme="a" data-role="header">
+                <h2>
+                    Details
+                </h2>
+                <a data-role="button" data-direction="reverse" data-transition="slide" href="#page1" data-icon="arrow-l" data-iconpos="left">
+                    Back
+                </a>
+            </div>
+            <div data-role="content">
+                <div data-role="collapsible-set" data-theme="" data-content-theme="">
+                    <div data-role="collapsible" data-collapsed="false">
+                        <h3>
+                            Address
+                        </h3>
+                        <div>
+                            <b>
+                                Pachecho, 20120, Asuncion
+                                <br />
+                            </b>
+                        </div>
+                    </div>
+                </div>
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Madison, WI&amp;zoom=14&amp;size=288x300&amp;markers=Madison, WI&amp;sensor=false" width="288" height="300" />
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+            </div>
+        </div>
+        <div data-role="page" id="page4">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Map
+                </h3>
+            </div>
+            <div data-role="content">
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=New York&amp;zoom=14&amp;size=288x200&amp;markers=Madison, WI|&amp;sensor=false" width="288" height="200" />
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page1" data-theme="" data-icon="home">
+                                ATMs
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page4" data-theme="" data-icon="grid" class="ui-btn-active">
+                                Map
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page5" data-theme="" data-icon="plus">
+                                Add ATM
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page5">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h3>
+                    Add ATM
+                </h3>
+            </div>
+            <div data-role="content">
+                <img src="https://maps.googleapis.com/maps/api/staticmap?center=Madison, WI&amp;zoom=19&amp;size=288x200&amp;markers=Madison, WI&amp;sensor=false" width="288" height="200" />
+                <form url="" action="POST">
+                    <div data-role="fieldcontain">
+                        <fieldset data-role="controlgroup">
+                            <label for="textinput5">
+                                Name
+                            </label>
+                            <input id="textinput5" placeholder="" value="" type="text" />
+                        </fieldset>
+                    </div>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+        <script>
+            //App custom javascript
+        </script>
+    </body>
+</html>
