@@ -6,7 +6,8 @@
  */
 Ext.define('App.store.Nodes', {
     extend: 'Ext.data.Store',
-    id: 'nodelist',
+    id: 'nodestore',
+    name: 'nodestore',
     requires: [
         "App.model.Node"
     ],
@@ -44,9 +45,14 @@ Ext.define('App.store.Nodes', {
         },
         listeners: {
             load: function(records, successful, operation) {
-                records.each(function(record) {
-                    record.calculateDistance();
-                });
+                if (successful[0].data.name === null) {
+                    Ext.Logger.log("Seems like a cross-domain issue...");
+                    records.removeAll();
+                } else {
+                    records.each(function(record) {
+                        record.calculateDistance();
+                    });
+                }
             }
         }
     }
