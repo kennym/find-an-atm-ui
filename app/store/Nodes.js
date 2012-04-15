@@ -32,7 +32,7 @@ Ext.define('App.store.Nodes', {
 
                 return grouper;
             },
-            sortProperty: 'distance',
+            sortProperty: 'distance'
         },
         proxy: {
             type: 'ajax',

@@ -4,12 +4,30 @@
  *
  * Form for adding a new node
  */
+
+ function success(position) {
+     console.log("setting coordintates");
+     window.lat = position.coords.latitude;
+     window.lon = position.coords.longitude;
+ }
+ function error() {
+     console.log("Fuck");
+ }
+
 Ext.define('App.view.AddNodeForm', {
     extend: 'Ext.form.Panel',
     xtype: 'addnodeform',
 
+    initComponent: function() {
+        navigator.geolocation.getCurrentPosition(success, error);
+        App.view.AddNodeForm.superclass.initComponent.call(this);
+        var values = this.getValues();
+        values["longitude"] = window.lon;
+        values["latitude"] = window.lat;
+        this.setValues(values);
+    },
     config: {
-        url: 'http://find-an-atm.kennymeyer.net/nodes',
+        url: 'http://localhost:3000/nodes',
         items: [
             {
                 xtype: 'toolbar',
@@ -44,6 +62,10 @@ Ext.define('App.view.AddNodeForm', {
                 },
                 items: [
                     {
+                        xtype: 'map',
+                        useCurrentLocation: true
+                    },
+                    {
                         required: true,
                         xtype: 'textfield',
                         name: 'name',
@@ -54,14 +76,14 @@ Ext.define('App.view.AddNodeForm', {
                         xtype: 'textfield',
                         name: 'latitude',
                         label: 'Latitude',
-                        value: this.lat,
+                        value: window.lat,
                         hidden: true
                     },
                     {
                         xtype: 'textfield',
                         name: 'longitude',
                         label: 'Longitude',
-                        value: this.lon,
+                        value: window.lon,
                         hidden: true
                     }
                 ]
