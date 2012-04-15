@@ -8,7 +8,7 @@ Ext.define('App.store.Nodes', {
     extend: 'Ext.data.Store',
     id: 'nodelist',
     requires: [
-        "App.model.Node",
+        "App.model.Node"
     ],
 
     config: {
@@ -35,7 +35,8 @@ Ext.define('App.store.Nodes', {
             sortProperty: 'distance',
         },
         proxy: {
-            url: 'http://find-an-atm.kennymeyer.net/nodes.json',
+            type: 'ajax',
+            url: 'http://localhost:3000/nodes.json',
             reader: {
                 type: 'json',
                 rootProperty: ""
