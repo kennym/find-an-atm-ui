@@ -16,7 +16,14 @@ Ext.define('App.view.Home', {
             {
                 xtype: 'toolbar',
                 docked: 'top',
-                title: 'Bla'
+                items: [
+                    {
+                        xtype: 'searchfield',
+                        name: 'searchbyname',
+                        placeHolder: 'Search By Name',
+                        flex: 1
+                    }
+                ]
             },
             {
                 xtype: 'nodelist',

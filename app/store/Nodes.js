@@ -7,7 +7,6 @@
 Ext.define('App.store.Nodes', {
     extend: 'Ext.data.Store',
     id: 'nodestore',
-    name: 'nodestore',
     requires: [
         "App.model.Node"
     ],

@@ -35,5 +35,21 @@ Ext.define('App.view.NodeList', {
             }
         ),
         store: 'Nodes'
+    },
+    onLoad: function() {
+        var me = this,
+            store = me.getStore();
+
+        me.callParent(arguments);
+
+        if (store.getCount() === 0 && store.isLoaded()) {
+            me.setMasked({
+                xtype: 'loadmask',
+                indicator: false,
+                message: 'Sorry, Find-An-ATM is having issues right now.'
+            });
+
+            me.getScrollable().getScroller().setDisabled(true);
+        }
     }
 });
