@@ -37,6 +37,10 @@ Ext.define('App.store.Nodes', {
         proxy: {
             type: 'ajax',
             url: 'http://localhost:3000/nodes.json',
+            extraParams: {
+                latitude: window.lat,
+                longitude: window.lon
+            },
             reader: {
                 type: 'json',
                 rootProperty: ""
@@ -44,9 +48,11 @@ Ext.define('App.store.Nodes', {
         },
         listeners: {
             load: function(records, successful, operation) {
-                if (successful[0].data.name === null) {
+                if (successful.length != 0 && successful[0].data.name == null) {
                     Ext.Logger.log("Seems like a cross-domain issue...");
                     records.removeAll();
+                } else if (successful.length == 0) {
+                    Ext.Msg.alert("Error", "Oops.. an error occurred");
                 } else {
                     records.each(function(record) {
                         record.calculateDistance();

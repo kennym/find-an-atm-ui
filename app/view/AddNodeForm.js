@@ -4,23 +4,10 @@
  *
  * Form for adding a new node
  */
-
- function success(position) {
-     console.log("setting coordintates");
-     window.lat = position.coords.latitude;
-     window.lon = position.coords.longitude;
- }
- function error() {
-     console.log("Fuck");
- }
-
 Ext.define('App.view.AddNodeForm', {
     extend: 'Ext.form.Panel',
     xtype: 'addnodeform',
-
     initComponent: function() {
-        navigator.geolocation.getCurrentPosition(success, error);
-        App.view.AddNodeForm.superclass.initComponent.call(this);
         var values = this.getValues();
         values["longitude"] = window.lon;
         values["latitude"] = window.lat;

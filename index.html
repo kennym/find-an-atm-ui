@@ -7,6 +7,24 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <script type="text/javascript" charset="utf-8">
+      // TODO: For development environment
+      if (window.location.host == "find-an-atm.kennymeyer.net") {
+          window.HOST_URL = "";
+      } else {
+          // Do somethign else
+      }
+
+      function success(position) {
+          console.log("setting coordintates");
+          window.lat = position.coords.latitude;
+          window.lon = position.coords.longitude;
+      }
+      function error() {
+          console.log("An error occurred");
+      }
+      navigator.geolocation.getCurrentPosition(success, error);
+    </script>
+    <script type="text/javascript" charset="utf-8">
       Ext.Loader.setConfig({
           enabled: true,
           paths: { 'Ext': 'touch/src' }

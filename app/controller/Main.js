@@ -1,11 +1,11 @@
 Ext.define('App.controller.Main', {
     extend: 'Ext.app.Controller',
-
     config: {
         refs: {
             home:           'homeview',
             nodelist:       'nodelist',
             nodeDetail:     'nodedetail',
+            nodeStore:      'nodestore',
             addNodeForm:    'addnodeform',
             addNodeButton:  'button[action=addNode]',
             searchByName:   'searchfield',
@@ -112,10 +112,8 @@ Ext.define('App.controller.Main', {
 
     onAddNodeSubmit: function(form, result, e, opts) {
         if (result["success"] == true) {
-            console.log("Node saved");
             Ext.Viewport.setActiveItem(this.getHome(), this.getAddNodeForm());
         } else {
-            console.log("Error occurred");
             Ext.Msg.alert("Error", "Oops.. an error occurred");
         }
     }

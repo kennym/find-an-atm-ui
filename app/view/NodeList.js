@@ -46,7 +46,7 @@ Ext.define('App.view.NodeList', {
             me.setMasked({
                 xtype: 'loadmask',
                 indicator: false,
-                message: 'Sorry, Find-An-ATM is having issues right now.'
+                message: 'Sorry, no ATMs found close to you. <br> Check your location settings, or consider adding an ATM.'
             });
 
             me.getScrollable().getScroller().setDisabled(true);

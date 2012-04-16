@@ -8,6 +8,7 @@ Ext.define('App.view.Home', {
     xtype: 'homeview',
     requires: [
         'App.view.NodeList',
+        'Ext.field.Search'
     ],
 
     config: {
