@@ -8,7 +8,8 @@ Ext.define('App.controller.Main', {
             nodeDetail:     'nodedetail',
             addNodeForm:    'addnodeform',
             addNodeButton:  'button[action=addNode]',
-            searchByName:   'searchfield'
+            searchByName:   'searchfield',
+            submitNodeButton: 'submitNodeButton'
         },
         control: {
             nodelist: {
@@ -20,6 +21,12 @@ Ext.define('App.controller.Main', {
             searchByName: {
                 keyup: 'filterListByName',
                 clearicontap: 'onSearchIconClearTap'
+            },
+            addNodeForm: {
+                submit: 'onAddNodeSubmit'
+            },
+            submitNodeButton: {
+                tap: 'onSubmitNode'
             }
         }
     },
@@ -49,9 +56,8 @@ Ext.define('App.controller.Main', {
     },
 
     filterListByName: function(field) {
-        Ext.Logger.log("Filtering list");
+        Ext.Logger.log("Filtering list...");
         //get the store and the value of the field
-        console.log(Ext.getStore('Nodes'));
 
         var value = field.getValue(),
             store = Ext.getStore('Nodes');
@@ -102,5 +108,15 @@ Ext.define('App.controller.Main', {
 
     onSearchIconClearTap: function() {
         Ext.getStore('Nodes').clearFilter();
+    },
+
+    onAddNodeSubmit: function(form, result, e, opts) {
+        if (result["success"] == true) {
+            console.log("Node saved");
+            Ext.Viewport.setActiveItem(this.getHome(), this.getAddNodeForm());
+        } else {
+            console.log("Error occurred");
+            Ext.Msg.alert("Error", "Oops.. an error occurred");
+        }
     }
 });

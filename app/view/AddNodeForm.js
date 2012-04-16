@@ -94,17 +94,11 @@ Ext.define('App.view.AddNodeForm', {
                 items: [
                     { xtype: 'spacer' },
                     {
+                        name: 'submitNodeButton',
                         text: 'Save',
                         ui: 'confirm',
                         handler: function() {
-                            this.up('addnodeform').submit({
-                                success: function(result, e, opts) {
-                                    console.log(result);
-                                },
-                                error: function(result, e, opts) {
-                                    console.log(result);
-                                }
-                            });
+                            this.up('addnodeform').submit();
                         }
                     }
                 ]
