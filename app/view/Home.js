@@ -23,6 +23,13 @@ Ext.define('App.view.Home', {
                         name: 'searchbyname',
                         placeHolder: 'Search By Name',
                         flex: 1
+                    },
+                    {
+                        iconMask: true,
+                        iconCls: 'refresh',
+                        handler: function(event, btn) {
+                            Ext.StoreMgr.get('Nodes').load();
+                        }
                     }
                 ]
             },
@@ -42,8 +49,7 @@ Ext.define('App.view.Home', {
                         iconCls: 'add1',
                         iconMask: true,
                         action: 'addNode'
-                    },
-
+                    }
                 ]
             }
         ]
