@@ -7,7 +7,8 @@
 Ext.define('App.view.AddNodeForm', {
     extend: 'Ext.form.Panel',
     xtype: 'addnodeform',
-    initComponent: function() {
+    requires: ["Ext.form.FieldSet"],
+    intialize: function() {
         var values = this.getValues();
         values["longitude"] = window.lon;
         values["latitude"] = window.lat;
