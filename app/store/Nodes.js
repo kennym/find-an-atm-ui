@@ -36,7 +36,7 @@ Ext.define('App.store.Nodes', {
         },
         proxy: {
             type: 'ajax',
-            url: 'http://localhost:3000/nodes.json',
+            url: window.HOST_URL + '/nodes.json',
             extraParams: {
                 latitude: window.lat,
                 longitude: window.lon

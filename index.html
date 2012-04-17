@@ -7,11 +7,11 @@
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 
     <script type="text/javascript" charset="utf-8">
-      // TODO: For development environment
-      if (window.location.host == "find-an-atm.kennymeyer.net") {
-          window.HOST_URL = "";
+      // Setup for development
+      if (window.location.host != "find-an-atm.kennymeyer.net") {
+          window.HOST_URL = "http://localhost:3000";
       } else {
-          // Do somethign else
+          window.HOST_URL = "http://find-an-atm.kennymeyer.net";
       }
 
       function success(position) {

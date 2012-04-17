@@ -14,7 +14,7 @@ Ext.define('App.view.AddNodeForm', {
         this.setValues(values);
     },
     config: {
-        url: 'http://localhost:3000/nodes',
+        url: window.HOST_URL + '/nodes',
         items: [
             {
                 xtype: 'toolbar',
