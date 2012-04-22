@@ -1,5 +1,6 @@
 CACHE MANIFEST
 # d7d99cc80c6385136a8d4a0c0759b424474e718d403db74403fbcbaee077ee0
+index.html
 touch/sencha-touch-all-debug.js
 touch/src/AbstractComponent.js
 touch/src/AbstractManager.js
@@ -369,6 +370,8 @@ app/view/NodeDetail.js
 app/view/NodeList.js
 app/view/NodeMap.js
 resources/icons/Icon~iphone.png
+resources/startup.png
+
 
 touch/resources/images/icon1.png
 touch/resources/images/icon2.png
