@@ -1,12 +1,7 @@
 CACHE MANIFEST
 # d7d99cc80c6385136a8d4a0c0759b424474e718d403db74403fbcbaee077ee04
 index.html
-production.html
-production-debug.html
 touch/sencha-touch-all-debug.js
-touch/sencha-touch-all.js
-touch/sencha-touch-debug.js
-touch/sencha-touch.js
 touch/src/AbstractComponent.js
 touch/src/AbstractManager.js
 touch/src/ActionSheet.js
